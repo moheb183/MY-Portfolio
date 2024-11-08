@@ -9,6 +9,7 @@ import close from "./close.svg";
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
+import bootstrap from "./tech/bootstrap.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
@@ -45,6 +46,7 @@ export {
   javascript,
   mongodb,
   nodejs,
+  bootstrap,
   reactjs,
   redux,
   tailwind,

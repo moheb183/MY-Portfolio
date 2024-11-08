@@ -1,4 +1,5 @@
 import React from 'react'
+import "../components/css/hero.css"
 
 import { motion } from 'framer-motion'
 import { styles } from '../styles'
@@ -7,8 +8,8 @@ import { ComputersCanvas } from './canvas'
 
 const Hero = () => {
   return (
-    <section className=' relative w-full h-screen mx-auto'>
-      <div className={`${styles.paddingX} 
+    <section className=' relative w-full h-screen mx-auto '>
+      <div className={` ${styles.paddingX}
       absolute  top-[px] mx-w-7xl mx-auto
        flex flex-row  inset-0 items-start gap-5`}>
         <div className=' mt-5 flex flex-col justify-center items-center'>
@@ -23,18 +24,20 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      <ComputersCanvas />
-      <div className=' absolute  xs:bottom-10 bottom-32  w-full flex justify-center items-center  '>
+      <div className='h-full w-full flex items-center justify-center'>
+        <ComputersCanvas />
+      </div>
+      <div className='imb  absolute  xs:bottom-10 bottom-0  w-full flex justify-center items-center  '>
         <a href="#about">
-          <div className=' w-[35px]  h-[64px] border-4 border-secondary rounded-3xl flex justify-center items-start  pb-5 p-2' >
+          <div className=' w-[35px]  h-[64px] border-4 border-secondary rounded-3xl flex justify-center items-start  mt-5 pb-5 p-2' >
             <motion.dev
               animate={{
-                y: [0, 24, 0]
+                y: [0, 6, 0]
               }} transition={{
                 duration: 1.5,
                 repeat: Infinity,
                 repeatType: 'Loop'
-              }} className=' w-5 h-5 rounded-full bg-secondary mb-1' />
+              }} className=' w-5 h-5 rounded-full bg-secondary mt-5' />
           </div>
         </a>
       </div>
