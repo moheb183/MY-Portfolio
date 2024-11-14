@@ -12,6 +12,12 @@ import { li } from 'framer-motion/client';
 const Navbar = () => {
   const [active, setactive] = useState("")
   const [Toggle, setToggle] = useState(false)
+  const handleCvDownloader = function (){
+    const link = document.createElement("a")
+    link.href="/Moheb-Youssry-Cv.pdf"
+    link.download="Moheb-Youssry-Cv"
+    link.click()
+  } 
 
   return (
     <nav className={`${styles.paddingX}  flex  items-center w-full  top-0 z-20 py-5 bg-primary`}>
@@ -35,6 +41,7 @@ const Navbar = () => {
           ))}
 
 
+        <button onClick={handleCvDownloader} className="text-[#905eff]">Download CV</button>
         </ul>
 
         <div className='sm:hidden flex  flex-1 justify-end items-center'>

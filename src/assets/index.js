@@ -25,6 +25,11 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import movie from "./company/movie.png"
+import Ecommerce from "./company/Ecommerce.png"
+import cupe from "./company/cupe.png"
+import atom from "./company/atom.png"
+
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -56,6 +61,10 @@ export {
   shopify,
   starbucks,
   tesla,
+  movie,
+  cupe,
+  atom,
+  Ecommerce,
   carrent,
   jobit,
   tripguide,

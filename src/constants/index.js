@@ -24,6 +24,11 @@ import {
   tripguide,
   threejs,
   bootstrap,
+  movie,
+  Ecommerce,
+  cupe,
+  atom,
+
 } from "../assets";
 
 export const navLinks = [
@@ -117,58 +122,59 @@ const technologies = [
 
 const experiences = [
   {
+    title: "3D Graphics Developer",
+    company_name: "Three.js Projects",
+    icon: cupe,
+    iconBg: "#E6DEDD",
+    date: "Level: Expert",
+    points: [
+      "Created interactive 3D scenes using Three.js, incorporating animations and visual effects for engaging applications.",
+      "Experimented with shaders, lighting, and materials for enhanced realism and dynamic effects.",
+      "Enhanced user engagement by designing immersive 3D environments.",
+      "Developed skills in WebGL and JavaScript for complex visual rendering.",
+    ],
+  },
+  {
     title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    company_name: "Personal Projects",
+    icon: atom,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Level: Proficient",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed responsive UIs using React.js, focusing on efficient component design and state management.",
+      "Implemented user-friendly layouts and interactions to enhance user experience across devices.",
+      "Utilized APIs and integrated backend services to improve application functionality.",
+      "Applied best practices in code organization and component-based architecture.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
+    title: "Movie App Developer",
+    company_name: "Personal Project",
+    icon: movie,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "Level: Intermediate",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Built a movie app using React.js, allowing users to browse, search, and filter movies by genre, popularity, and ratings.",
+      "Integrated with a third-party movie API to display real-time movie data and recommendations.",
+      "Focused on creating a responsive and visually appealing interface.",
+      "Gained experience with API integration and data handling in React.",
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
+    title: "E-Commerce App Developer",
+    company_name: "Personal Project",
+    icon: Ecommerce,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date:  "Level: Beginner",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed an e-commerce app with React.js, featuring product listings, search functionality, cart, and checkout.",
+      "Implemented state management to handle dynamic interactions and improve user experience.",
+      "Ensured responsive design for compatibility across various devices.",
+      "Practiced front-end routing and connecting with backend APIs for data processing.",
     ],
   },
 ];
+
 
 const testimonials = [
   {
