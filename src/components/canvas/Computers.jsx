@@ -1,37 +1,27 @@
 import { useEffect, useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+
 import Loader from "../Loader";
 
-// تفعيل DRACO
-const useDRACOLoader = (url) => {
-  const loader = new GLTFLoader();
-  const dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath("/draco/"); // حدد مسار DRACO الخاص بك
-  loader.setDRACOLoader(dracoLoader);
-  return loader.load(url);
-};
-
 const Computers = ({ isMobile }) => {
-  // تحميل النموذج باستخدام DRACO
-  const computer = useGLTF("./desktop_pc/scene.gltf", useDRACOLoader);
+  const computer = useGLTF("./desktop_pc/scene.gltf");
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.05} groundColor="black" />
+      <hemisphereLight intensity={0.15} groundColor="black" />
       <directionalLight
         position={[0, 5, 5]}
-        intensity={1}
-        castShadow={false} // إيقاف الظلال لتقليل الاستهلاك
+        intensity={2}
+        castShadow
+        shadow-mapSize={1024}
       />
-      <pointLight intensity={0.5} /> {/* تقليل شدة الضوء */}
+      <pointLight intensity={1} />
       <primitive
-        receiveShadow={false} // إيقاف الظلال إذا كانت غير ضرورية
+        receiveShadow
         object={computer.scene}
-        scale={isMobile ? 0.5 : 0.7} // تقليل الحجم بشكل أكبر للأجهزة المحمولة
-        position={isMobile ? [0, -2, -2] : [0, -2, -1.5]} // تعديل الموضع
+        scale={isMobile ? 0.7 : 0.75}
+        position={isMobile ? [0, -3, -2.2] : [0, -2, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -56,18 +46,17 @@ const ComputersCanvas = () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
-
   return (
     <Canvas
       frameloop="demand"
       shadows
-      dpr={[1, 1.5]} // تقليل دقة العرض لتقليل استهلاك الذاكرة
-      camera={{ position: [20, 3, 5], fov: 30 }} // تقليل مجال الرؤية
-      gl={{ preserveDrawingBuffer: false }} // تعطيل الاحتفاظ بالصورة لتقليل الذاكرة المستهلكة
+      dpr={[1, 2]}
+      camera={{ position: [20, 3, 5], fov: 25 }}
+      gl={{ preserveDrawingBuffer: false }}
     >
       <Suspense fallback={<Loader />}>
         <OrbitControls
-          autoRotate={false} // إيقاف التدوير التلقائي للكاميرا لتقليل استهلاك الموارد
+          autoRotate
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
@@ -79,5 +68,4 @@ const ComputersCanvas = () => {
     </Canvas>
   );
 };
-
 export default ComputersCanvas;
