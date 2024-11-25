@@ -30,7 +30,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="h-full w-full flex items-center justify-center">
-        {memoizedCanvas}
+          {memoizedCanvas}
       </div>
       <div className="imb  absolute  xs:bottom-10 bottom-0  w-full flex justify-center items-center  ">
         <a href="#about">
