@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "../components/css/hero.css";
 
 import { motion } from "framer-motion";
@@ -6,6 +6,8 @@ import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
+  const memoizedCanvas = useMemo(() => <ComputersCanvas />, []);
+
   return (
     <section className=" relative w-full h-screen mx-auto ">
       <div
@@ -28,7 +30,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="h-full w-full flex items-center justify-center">
-        {/* <ComputersCanvas /> */}
+        {memoizedCanvas}
       </div>
       <div className="imb  absolute  xs:bottom-10 bottom-0  w-full flex justify-center items-center  ">
         <a href="#about">
