@@ -1,22 +1,15 @@
-import { useEffect, useState, Suspense } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
+import { useEffect, useState, Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
-import Loader from '../Loader'
-
+import Loader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-
-  const computer = useGLTF('./desktop_pc/scene.gltf')
-
-
-
-
-
+  const computer = useGLTF("./desktop_pc/scene.gltf");
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
+      <hemisphereLight intensity={0.15} groundColor="black" />
       <directionalLight
         position={[0, 5, 5]}
         intensity={2}
@@ -32,16 +25,14 @@ const Computers = ({ isMobile }) => {
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
-  )
-}
-
+  );
+};
 
 const ComputersCanvas = () => {
-
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mediaQuery = window.matchMedia("(max-width: 360px)");
 
     setIsMobile(mediaQuery.matches);
 
@@ -57,7 +48,7 @@ const ComputersCanvas = () => {
   }, []);
   return (
     <Canvas
-      frameloop='demand'
+      frameloop="demand"
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
@@ -75,6 +66,6 @@ const ComputersCanvas = () => {
 
       <Preload all />
     </Canvas>
-  )
-}
-export default ComputersCanvas
+  );
+};
+export default ComputersCanvas;
