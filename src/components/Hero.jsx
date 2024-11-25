@@ -12,7 +12,7 @@ const Hero = () => {
     <section className=" relative w-full h-screen mx-auto ">
       <div
         className={` ${styles.paddingX}
-      absolute  top-[px] mx-w-7xl mx-auto
+      absolute  top-[0px] mx-w-7xl mx-auto
        flex flex-row  inset-0 items-start gap-5`}
       >
         <div className=" mt-5 flex flex-col justify-center items-center">
